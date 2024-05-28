@@ -1,33 +1,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  font-family: poppins;
+}
+.hover-1 {
+  @apply bg-gradient-to-r from-slate-800 to-slate-800 rounded-full;
+  background-size: var(--p, 0);
+  background-repeat: no-repeat;
+  transition: background 0.4s, background-position 0s;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.hover-1:hover {
+  /* --tw-gradient-from: #1095c1;
+    --tw-gradient-to: #1095c1; */
+  --p: 100%;
+  @apply bg-gradient-to-r from-slate-700 to-slate-700;
+  color: #fff;
+}
+
+.btn-hover-1 {
+  background-size: 0 100%;
+  transition: 0.4s, background-position 0s;
+}
+.btn-hover-1:hover {
+  --p: 100%;
+  background-position: 0 0;
+  background-size: 100% 100%;
+}
+.text-align-last-justify {
+  text-align: justify;
+  text-align-last: justify;
+  -moz-text-align-last: justify;
+}
+.animateWave {
+  /* background-size: cover; */
+  animation: animateWave 5s linear infinite;
+}
+.animateWave::before {
+  /* background-size: cover; */
+  animation: animateWave-reverse 5s linear infinite;
+}
+.animateWave::after {
+  animation-delay: -5s;
+  animation: animateWave 10s linear infinite;
+}
+
+@keyframes animateWave {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 1360px;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@keyframes animateWave-reverse {
+  0% {
+    background-position: 1360px;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+@font-face {
+  font-family: poppins;
+  src: url("/Poppins-Regular.ttf");
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.icon-gradient{
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

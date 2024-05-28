@@ -1,113 +1,364 @@
+"use client";
 import Image from "next/image";
-
+import { useEffect } from "react";
+import hero from "./Image1.png";
+import slide from "./info.jpg";
+import { LiaCheckCircleSolid, LiaCodeSolid } from "react-icons/lia";
+import { Carousel } from "react-responsive-carousel";
+import {
+  BiDesktop,
+  BiLogoAndroid,
+  BiNetworkChart,
+  BiRocket,
+} from "react-icons/bi";
+import { AiOutlineCode, AiOutlineEdit, AiOutlineTeam } from "react-icons/ai";
+import services from "@/data/services.json";
+import Link from "next/link";
 export default function Home() {
+  useEffect(() => {
+    const disableRightClick = (e: { preventDefault: () => void }) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", disableRightClick);
+
+    return () => {
+      document.removeEventListener("contextmenu", disableRightClick);
+    };
+  }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <section className="relative h-screen bg-[url('/mobile.png')] bg-cover bg-center bg-no-repeat bg-fixed">
+        <div className="h-full bg-gradient-to-r from-slate-900 to-purple-800/70 ">
+          <div className="container h-full mx-auto grid grid-cols-1 md:grid-cols-2 px-5">
+            <div className="h-full flex flex-col justify-center text-white gap-3">
+              <h1 className="text-4xl sm:text-5xl leading-tight">
+                Bienvenue chez <br />
+                <span className="font-bold">Full Coding</span>
+              </h1>
+              <p className="text-base sm:text-lg">
+                Bienvenue sur le site de Full Coding, votre partenaire de
+                confiance pour toutes vos solutions numériques. Nous sommes une
+                équipe dévouée de développeurs et de créatifs, prêts à vous
+                accompagner dans la réussite de vos projets en ligne.
+              </p>
+
+              <div className=" flex gap-3 font-bold">
+                <a
+                  href=""
+                  className="h-fit w-fit bg-[#1507A6] px-5 py-2 text-sm sm:text-[16px] sm:px-7 sm:py-3 rounded-full shadow shadow-slate-900"
+                >
+                  Demandez un devis
+                </a>
+                <a
+                  href=""
+                  className="h-fit w-fit bg-gradient-to-r from-slate-400 to-slate-400 btn-hover-1 bg-right  bg-no-repeat duration-500  text-slate-400 hover:text-slate-900 px-5 py-2 text-sm sm:text-[16px] sm:px-7 sm:py-3 rounded-full"
+                >
+                  En savoir plus
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={hero}
+          alt="hero"
+          className="w-[400px] h-[400px] absolute inset-y-1/4 z-40 right-28 hidden md:block"
         />
-      </div>
+        <div className="absolute bottom-0 left-0 overflow-hidden bg-[url('/wave.png')]  h-[142px] animateWave w-full after:w-full after:h-[142px] after:bg-[url('/wave.png')] after:absolute after:top-0 after:left-0 after:opacity-60  before:w-full before:h-[142px] before:bg-[url('/wave.png')] before:absolute before:top-0 before:left-0 before:opacity-40"></div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <section>
+        <div>
+          <div className="container mx-auto p-5">
+            <div className="grid grid-cols-1 sm:grid-cols-6">
+              <div className="col-span-1"></div>
+              <div className="col-span-4 flex flex-col justify-center items-center">
+                <h1 className="text-3xl sm:text-4xl">Qui nous sommes?</h1>
+                <p className="text-center p-5 text-base sm:text-lg">
+                  FullCoding est une équipe passionnée de développeurs et de
+                  créatifs dédiée à fournir des solutions numériques innovantes
+                  et de haute qualité. Nous croyons en la puissance de la
+                  technologie pour transformer les idées en réalités tangibles
+                  et aider les entreprises à atteindre leurs objectifs.
+                </p>
+              </div>
+              <div className="col-span-1"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="relative">
+        <div className="container mx-auto p-5 h-full relative">
+          <h1 className="text-3xl sm:text-4xl text-center my-3">
+            Nos services?
+          </h1>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 py-5">
+            {services.map((item: any) => {
+              return (
+                <div
+                  key={item.id}
+                  className="bg-[#3D2473] backdrop-filter rounded p-5 backdrop-blur text-white"
+                >
+                  <LiaCodeSolid className="text-5xl" />
+                  <h1 className="text-lg sm:text-xl font-semibold p-0 mt-2">
+                    {item.nom}
+                  </h1>
+                  <p className="text-sm p-0 m-0 text-justify">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container mx-auto p-5">
+          <h1 className="text-3xl sm:text-4xl text-center mb-10">
+            Pourquoi nous choisir ?
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+            <div className="p-5 flex flex-col items-center justify-center">
+              <div className="w-20 p-0 h-20 mb-3 rounded-full flex flex-col justify-center items-center border-2 border-[#3D2473]">
+                <AiOutlineCode size={40} color="#BA1C98" />
+              </div>
+              <h1 className="text-xl sm:text-2xl uppercase text-center">
+                Expertise
+              </h1>
+              <p className="text-base  text-center">
+                Une équipe de professionnels expérimentés avec une expertise
+                reconnue dans le développement web et mobile.
+              </p>
+            </div>
+            <div className="p-5 flex flex-col items-center justify-center">
+              <div className="w-20 p-0 h-20 mb-3 rounded-full flex flex-col justify-center items-center border-2 border-[#3D2473]">
+                <BiRocket size={40} color="#BA1C98" />
+              </div>
+              <h1 className="text-xl sm:text-2xl uppercase text-center">
+                Innovation
+              </h1>
+              <p className="text-base  text-center">
+                Utilisation des technologies les plus récentes pour offrir des
+                solutions innovantes et performantes.
+              </p>
+            </div>
+            <div className="p-5 flex flex-col items-center justify-center">
+              <div className="w-20 p-0 h-20 mb-3 rounded-full flex flex-col justify-center items-center border-2 border-[#3D2473]">
+                <AiOutlineEdit size={40} color="#BA1C98" />
+              </div>
+              <h1 className="text-xl sm:text-2xl uppercase text-center">
+                Personnalisation
+              </h1>
+              <p className="text-base  text-center">
+                Des solutions sur mesure adaptées aux besoins spécifiques de
+                chaque client.
+              </p>
+            </div>
+            <div className="p-5 flex flex-col items-center justify-center">
+              <div className="w-20 p-0 h-20 mb-3 rounded-full flex flex-col justify-center items-center border-2 border-[#3D2473]">
+                <AiOutlineTeam size={40} color="#BA1C98" />
+              </div>
+              <h1 className="text-xl sm:text-2xl uppercase text-center">
+                Support
+              </h1>
+              <p className="text-base text-center">
+                Un support continu pour garantir la pérennité et la performance
+                de vos solutions numériques.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-[#3D2473] bg-[url('/img2.jpg')] bg-cover bg-blend-soft-light bg-fixed relative mt-4">
+        <div className="container mx-auto p-5 w-full absolute top-3">
+          <h1 className="text-3xl sm:text-4xl text-center my-3 text-white font-semibold uppercase">
+            Nos Projets
+          </h1>
+        </div>
+        <Carousel
+          showArrows={true}
+          className="h-[30rem] w-full "
+          autoPlay
+          showIndicators={true}
+          swipeable
+          infiniteLoop
         >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className="relative h-full text-white">
+            <div className="h-[30rem] grid grid-cols-1 md:grid-cols-5">
+              <div className="col-span-1"></div>
+              <Link
+                className="col-span-3 h-full flex flex-col items-center justify-center gap-3 px-3"
+                href={""}
+              >
+                <h1 className="text-5xl font-semibold text-center">
+                  Sagot & Ralay
+                </h1>
+                <p className="text-sm md:text-base text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates alias dolorem perferendis dolores totam obcaecati
+                  quis laboriosam amet dolore corrupti id officia ipsa facilis
+                  libero, ea impedit saepe voluptatum vero?
+                </p>
+              </Link>
+              <div className="col-span-1"></div>
+            </div>
+          </div>
+          <div className="relative h-full text-white">
+            <div className="h-[30rem] grid grid-cols-1 md:grid-cols-5">
+              <div className="col-span-1"></div>
+              <Link
+                href={""}
+                className="col-span-3 h-full flex flex-col items-center justify-center gap-3 px-3"
+              >
+                <h1 className="text-5xl font-semibold text-center">
+                  ESPIC MADAGASCAR
+                </h1>
+                <p className="text-sm md:text-base text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates alias dolorem perferendis dolores totam obcaecati
+                  quis laboriosam amet dolore corrupti id officia ipsa facilis
+                  libero, ea impedit saepe voluptatum vero?
+                </p>
+              </Link>
+              <div className="col-span-1"></div>
+            </div>
+          </div>
+          <div className="relative h-full text-white">
+            <div className="h-[30rem] grid grid-cols-1 md:grid-cols-5">
+              <div className="col-span-1"></div>
+              <Link
+                href={""}
+                className="col-span-3 h-full flex flex-col items-center justify-center gap-3 px-3"
+              >
+                <h1 className="text-5xl font-semibold text-center">
+                  ISDE MADAGASCAR
+                </h1>
+                <p className="text-sm md:text-base text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates alias dolorem perferendis dolores totam obcaecati
+                  quis laboriosam amet dolore corrupti id officia ipsa facilis
+                  libero, ea impedit saepe voluptatum vero?
+                </p>
+              </Link>
+              <div className="col-span-1"></div>
+            </div>
+          </div>
+          <div className="relative h-full text-white">
+            <div className="h-[30rem] grid grid-cols-1 md:grid-cols-5">
+              <div className="col-span-1"></div>
+              <Link
+                href={""}
+                className="col-span-3 h-full flex flex-col items-center justify-center gap-3 px-3"
+              >
+                <h1 className="text-5xl font-semibold text-center">
+                  JSSI MADAGASCAR
+                </h1>
+                <p className="text-sm md:text-base text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates alias dolorem perferendis dolores totam obcaecati
+                  quis laboriosam amet dolore corrupti id officia ipsa facilis
+                  libero, ea impedit saepe voluptatum vero?
+                </p>
+              </Link>
+              <div className="col-span-1"></div>
+            </div>
+          </div>
+        </Carousel>
+      </section>
+      <section id="pricing">
+        <div className="container mx-auto p-5">
+          <h1 className="text-xl md:text-4xl text-center my-5">Nos devis</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="h-auto relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700">
+              
+              <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-[#CCCCCC]/40 flex items-center justify-center ">
+              <BiNetworkChart size={50} />
+              </div>
+              <span>Developpement web</span>
+              <h1 className="font-bold text-4xl text-center">
+                400 000 MGA
+              </h1>
+              <ul className="mt-3 pl-5">
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                
+              </ul>
+              <button className="py-3 bg-gradient-to-r  from-[#ad0e8d] to-purple-700/70 w-full rounded-full mt-3 text-white">
+                Commencer
+              </button>
+            </div>
+            <div className="h-auto relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700">
+              
+              <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-[#CCCCCC]/40 flex items-center justify-center ">
+              <BiLogoAndroid size={50} />
+              </div>
+              <span>Developpement Mobile</span>
+              <h1 className="font-bold text-4xl text-center">
+                600 000 MGA
+              </h1>
+              <ul className="mt-3 pl-5">
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                
+              </ul>
+              <button className="py-3 bg-gradient-to-r  from-[#ad0e8d] to-purple-700/70 w-full rounded-full mt-3 text-white">
+                Commencer
+              </button>
+            </div>
+            <div className="h-auto relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700">
+              
+              <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-[#CCCCCC]/40 flex items-center justify-center ">
+              <BiDesktop size={50} />
+              </div>
+              <span>Developpement Logiciel</span>
+              {/* <span className="text-sm">A partir de</span> */}
+              <h1 className="font-bold text-4xl text-center">
+                400 000 MGA
+              </h1>
+              <ul className="mt-3 pl-5">
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <LiaCheckCircleSolid size={20}/> <span className="text-base">Lorem, ipsum dolor sit amet consectetur</span>
+                </li>
+                
+              </ul>
+              <button className="py-3 bg-gradient-to-r  from-[#ad0e8d] to-purple-700/70 w-full rounded-full mt-3 text-white">
+                Commencer
+              </button>
+            </div>
+           
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

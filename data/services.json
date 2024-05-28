@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "nom": "Développement d'Applications Mobiles",
+      "description": "Conception et développement d'applications mobiles pour iOS et Android, adaptées aux besoins spécifiques de votre entreprise.",
+      "tarif": "À partir de $5000"
+    },
+    {
+      "id": 2,
+      "nom": "Développement de Sites Web",
+      "description": "Création de sites web professionnels avec un design moderne et des fonctionnalités personnalisées pour répondre aux besoins de votre entreprise.",
+      "tarif": "À partir de $3000"
+    },
+    {
+      "id": 3,
+      "nom": "Marketing Digital",
+      "description": "Services complets de marketing digital comprenant le référencement (SEO), la publicité en ligne (SEM), le marketing de contenu, etc.",
+      "tarif": "Sur devis"
+    },
+    {
+      "id": 4,
+      "nom": "Développement de Logiciels sur Mesure",
+      "description": "Conception et développement de solutions logicielles personnalisées pour répondre aux besoins spécifiques de votre entreprise.",
+      "tarif": "Sur devis"
+    },
+    {
+      "id": 5,
+      "nom": "Analyse de Données et Business Intelligence",
+      "description": "Services d'analyse de données avancées pour extraire des insights significatifs à partir des données, afin d'éclairer les décisions stratégiques.",
+      "tarif": "À partir de $2000 par mois"
+    },
+    {
+      "id": 6,
+      "nom": "Cybersécurité",
+      "description": "Services de cybersécurité pour protéger vos données et vos systèmes informatiques contre les cybermenaces, comprenant des audits de sécurité, etc.",
+      "tarif": "Sur devis"
+    },
+    {
+      "id": 7,
+      "nom": "Cloud Computing",
+      "description": "Services de cloud computing pour migrer vos opérations vers le cloud, gérer vos infrastructures cloud et développer des applications cloud-native, etc.",
+      "tarif": "Sur devis"
+    },
+    {
+      "id": 8,
+      "nom": "Intelligence Artificielle et Machine Learning",
+      "description": "Services d'intelligence artificielle et de machine learning pour développer des algorithmes d'IA, des modèles prédictifs, etc.",
+      "tarif": "Sur devis"
+    }
+  ]
+  

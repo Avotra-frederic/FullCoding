@@ -14,7 +14,14 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    backdropFilter: {
+      'none': 'none',
+      'blur': 'blur(20px)',
+    },
   },
-  plugins: [],
+
+  plugins: [
+    require('tailwindcss-filters'),
+  ],
 };
 export default config;
