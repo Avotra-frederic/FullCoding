@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 * {
-  font-family: poppins;
+  font-family: montserrat;
+  font-weight: 100;
 }
 .hover-1 {
-  @apply bg-gradient-to-r from-slate-800 to-slate-800 rounded-full;
+  @apply bg-gradient-to-r from-slate-800 to-slate-800 rounded;
   background-size: var(--p, 0);
   background-repeat: no-repeat;
   transition: background 0.4s, background-position 0s;
@@ -63,8 +64,8 @@
   }
 }
 @font-face {
-  font-family: poppins;
-  src: url("/Poppins-Regular.ttf");
+  font-family: montserrat;
+  src: url("/font/Montserrat-Light.ttf");
 }
 
 .icon-gradient{

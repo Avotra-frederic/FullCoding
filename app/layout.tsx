@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import Navbar from "@/components/partials/Navbar";
+import Footer from "@/components/partials/Footer";
 
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({
         <main>
           <Navbar/>
           {children}
+          <Footer/>
           </main>
       </body>
     </html>

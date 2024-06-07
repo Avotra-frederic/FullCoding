@@ -11,7 +11,7 @@ function NavLink({ href, children }: NavLinkProps) {
   return (
     <a
       href={href}
-      className="relative block md:inline-block px-4 py-2 font-semibold text-white transition duration-300 ease-in-out hover-1"
+      className="relative block md:inline-block px-4 py-2  text-white transition duration-300 ease-in-out hover-1"
     >
       <div className="relative z-10">{children}</div>
       <div className="absolute inset-0  hover:bg-transparent transition duration-300 ease-in-out"></div>
@@ -55,8 +55,8 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full  text-white font-semibold transition-all duration-300 ${
-        isScroll && "backdrop-filter backdrop-blur-xl bg-[#406F92]/30 shadow-xl"
+      className={`fixed top-0 z-50 w-full  text-white transition-all duration-300 ${
+        isScroll && "backdrop-filter backdrop-blur-xl bg-[#BA1C98] shadow-xl"
       } ${isOpen ? "h-fit" : "h-16"}`}
     >
       <nav className={navClasses}>
