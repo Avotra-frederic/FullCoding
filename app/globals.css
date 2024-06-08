@@ -5,6 +5,9 @@
   font-family: montserrat;
   font-weight: 100;
 }
+html{
+  scroll-behavior: smooth;
+}
 .hover-1 {
   @apply bg-gradient-to-r from-slate-800 to-slate-800 rounded;
   background-size: var(--p, 0);

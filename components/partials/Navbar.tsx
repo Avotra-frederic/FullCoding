@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { LiaBarsSolid } from "react-icons/lia";
 
@@ -60,9 +61,7 @@ function Navbar() {
       } ${isOpen ? "h-fit" : "h-16"}`}
     >
       <nav className={navClasses}>
-        <a href="/" className="text-xl">
-          FullCoding .
-        </a>
+        <Image src={"/fullCoding.png"} width={150} height={100} alt={"logo"}/>
 
         <div className={menuClasses}>
           <NavLink href="/">Accueil</NavLink>

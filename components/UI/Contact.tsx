@@ -9,8 +9,8 @@ import {
   LiaPaperPlane
 } from "react-icons/lia";
 import emailjs from 'emailjs-com';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 function Contact() {
   const [formData, setFormData] = useState<formData>({userName:"",email:"",subject:"",message:""});
   const formRef = useRef<HTMLFormElement>(null);
@@ -44,7 +44,7 @@ function Contact() {
   }
   return (
     <React.Fragment>
-      <ToastContainer />
+      
       <section>
         <div className="container mx-auto px-5 py-5 relative mb-10">
           <h1 className="text-center mt-4 mb-4 text-4xl" data-aos="fade-up" data-aos-duration={1000}>Nous contacter</h1>
