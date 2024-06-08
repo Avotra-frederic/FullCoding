@@ -65,9 +65,9 @@ function Navbar() {
 
         <div className={menuClasses}>
           <NavLink href="/">Accueil</NavLink>
-          <NavLink href="/about">A propos</NavLink>
-          <NavLink href="/services">Services</NavLink>
-          <NavLink href="/team">Equipes</NavLink>
+          <NavLink href="#about">A propos</NavLink>
+          <NavLink href="#services">Services</NavLink>
+          <NavLink href="#pricing">Devis</NavLink>
         </div>
 
         <div className="md:hidden">
@@ -78,9 +78,9 @@ function Navbar() {
       </nav>
       <div className={isOpen ? "flex flex-col gap-3 p-5 md:hidden" : "hidden "}>
         <NavLink href="/">Accueil</NavLink>
-        <NavLink href="/about">A propos</NavLink>
-        <NavLink href="/services">Services</NavLink>
-        <NavLink href="/team">Equipes</NavLink>
+        <NavLink href="#about">A propos</NavLink>
+        <NavLink href="#services">Services</NavLink>
+        <NavLink href="#pricing">Devis</NavLink>
       </div>
     </header>
   );

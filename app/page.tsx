@@ -82,7 +82,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 overflow-hidden bg-[url('/wave.png')]  h-[142px] animateWave w-full after:w-full after:h-[142px] after:bg-[url('/wave.png')] after:absolute after:top-0 after:left-0 after:opacity-60  before:w-full before:h-[142px] before:bg-[url('/wave.png')] before:absolute before:top-0 before:left-0 before:opacity-40"></div>
       </section>
 
-      <section>
+      <section id="about">
         <div>
           <div className="container mx-auto p-5">
             <div className="grid grid-cols-1 sm:grid-cols-6">
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative">
+      <section className="relative" id="services">
         <div className="container mx-auto p-5 h-full relative">
           <h1
             className="text-3xl sm:text-4xl text-center my-3"
@@ -331,9 +331,7 @@ export default function Home() {
           </div>
         </Carousel>
       </section>
-
       <PricingSection/>
-
       <Contact />
     </>
   );
