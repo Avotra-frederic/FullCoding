@@ -33,7 +33,8 @@ const PricingSection: FC = () => {
               <BiNetworkChart size={50} />
             </div>
             <span>Développement Web</span>
-            <h1 className="font-bold text-4xl text-center"><span className="text-[8px]">A partir de</span> 400 000 MGA</h1>
+            <span className="text-[8px]">A partir de</span> 
+            <h1 className="font-bold text-4xl text-center">400 000 MGA</h1>
             <ul className="mt-3 pl-5">
               <li className="flex items-center gap-3">
                 <LiaCheckCircleSolid size={20} />
@@ -77,7 +78,8 @@ const PricingSection: FC = () => {
               <BiLogoAndroid size={50} />
             </div>
             <span>Développement Mobile</span>
-            <h1 className="font-bold text-4xl text-center"><span className="text-[8px]">A partir de</span> 600 000 MGA</h1>
+            <span className="text-[8px]">A partir de</span> 
+            <h1 className="font-bold text-4xl text-center">600 000 MGA</h1>
             <ul className="mt-3 pl-5">
               <li className="flex items-center gap-3">
                 <LiaCheckCircleSolid size={20} />
@@ -121,7 +123,8 @@ const PricingSection: FC = () => {
               <BiDesktop size={50} />
             </div>
             <span>Développement Logiciel</span>
-            <h1 className="font-bold text-4xl text-center"> <span className="text-[8px]">A partir de</span> 600 000 MGA</h1>
+            <span className="text-[8px]">A partir de</span> 
+            <h1 className="font-bold text-4xl text-center">600 000 MGA</h1>
             <ul className="mt-3 pl-5">
               <li className="flex items-center gap-3">
                 <LiaCheckCircleSolid size={20} />
