@@ -56,8 +56,8 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full  text-white transition-all duration-300 ${
-        isScroll && "backdrop-filter backdrop-blur-xl bg-[#BA1C98] shadow-xl"
+      className={`fixed top-0 z-50 w-full bg-[#BA1C98]  text-white transition-all duration-300 ${
+        isScroll ? "backdrop-filter backdrop-blur-xl bg-[#BA1C98] shadow-xl" : "md:bg-transparent"
       } ${isOpen ? "h-fit" : "h-16"}`}
     >
       <nav className={navClasses}>

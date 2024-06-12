@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { BiNetworkChart, BiLogoAndroid, BiDesktop } from "react-icons/bi";
 import { LiaCheckCircleSolid } from "react-icons/lia";

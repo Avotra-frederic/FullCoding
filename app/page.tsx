@@ -16,12 +16,13 @@ import {
   BiRocket,
 } from "react-icons/bi";
 import { AiOutlineCode, AiOutlineEdit, AiOutlineTeam } from "react-icons/ai";
-import services from "@/data/services.json";
+
 import Link from "next/link";
 import Contact from "@/components/UI/Contact";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import PricingSection from "@/components/UI/Pricing";
+import Service from "@/components/UI/Service";
 
 export default function Home() {
   useEffect(() => {
@@ -81,7 +82,6 @@ export default function Home() {
         />
         <div className="absolute bottom-0 left-0 overflow-hidden bg-[url('/wave.png')]  h-[142px] animateWave w-full after:w-full after:h-[142px] after:bg-[url('/wave.png')] after:absolute after:top-0 after:left-0 after:opacity-60  before:w-full before:h-[142px] before:bg-[url('/wave.png')] before:absolute before:top-0 before:left-0 before:opacity-40"></div>
       </section>
-
       <section id="about">
         <div>
           <div className="container mx-auto p-5">
@@ -112,42 +112,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative" id="services">
-        <div className="container mx-auto p-5 h-full relative">
-          <h1
-            className="text-3xl sm:text-4xl text-center my-3"
-            data-aos="fade-up"
-            data-aos-duration={1000}
-          >
-            Nos services
-          </h1>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 py-5">
-            {services.map((item: any) => {
-              return (
-                <div
-                  key={item.id}
-                  className="bg-[#3D2473] backdrop-filter rounded py-5 px-10 backdrop-blur text-white flex flex-col gap-3"
-                  data-aos="fade-up"
-                  data-aos-duration={2000}
-                  data-aos-delay={200 * item.id}
-                >
-                  <LiaCodeSolid className="text-3xl text-green-400" />
-                  <h1 className="text-base sm:text-lg p-0 mt-2">{item.nom}</h1>
-                  <p className="text-sm p-0 m-0 text-justify sm:text-[14px] font-thin">
-                    {item.description}
-                  </p>
-                  <div className="mt-auto flex items-center justify-center">
-                    <button className="py-2 px-6 border border-[#BA1C98] text-sm flex items-center justify-between gap-3">
-                      <LiaArrowRightSolid />
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <Service/>
       <section>
         <div className="container mx-auto p-5">
           <h1

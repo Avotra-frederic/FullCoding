@@ -24,14 +24,14 @@ function Contact() {
     formRef.current?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>){
+  async function  handleSubmit(event: React.FormEvent<HTMLFormElement>){
     event.preventDefault();
     const sanitizedData = {
       ...formData,
       message: DOMPurify.sanitize(formData.message)
     };
     setFormData(sanitizedData);
-    emailjs.sendForm('FullCoding', 'fullCoding_Template', formRef.current!, 'GJCbIwr-B8qpFObBe')
+    await emailjs.sendForm('FullCoding', 'fullCoding_Template', formRef.current!, 'GJCbIwr-B8qpFObBe')
       .then((result) => {
           console.log(result.text);
           toast.success("Email envoyé avec succès!");
