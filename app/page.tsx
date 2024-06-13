@@ -63,7 +63,7 @@ export default function Home() {
                   Demandez un devis
                 </a>
                 <a
-                  href=""
+                  href="#we"
                   className="h-fit w-fit bg-gradient-to-r from-slate-400 to-slate-400 btn-hover-1 bg-right  bg-no-repeat duration-500  text-slate-400 hover:text-slate-900 px-5 py-2 text-sm sm:text-[16px] sm:px-7 sm:py-3 rounded"
                 >
                   En savoir plus
@@ -113,7 +113,7 @@ export default function Home() {
         </div>
       </section>
       <Service/>
-      <section>
+      <section id="we">
         <div className="container mx-auto p-5">
           <h1
             className="text-3xl sm:text-4xl text-center mb-10"

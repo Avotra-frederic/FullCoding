@@ -9,6 +9,7 @@ export async function POST(request:NextRequest) {
     const name = data.get("userName") as string;
     const email = data.get("email") as string;
     const message = data.get("message") as string;
+    const service = data.get("service") as string;
     const transport = createTransport({
         service: "gmail",
         auth: {
@@ -28,13 +29,18 @@ export async function POST(request:NextRequest) {
             from: process.env.EMAIL_USER,
             to: email,
             sender: name,
-            subject:"Demande de devis",
+            subject:`Demande de devis pour ${service}`,
             replyTo:email,
             html: replaceEmailTemplate,
             attachments: [
                {
                 filename: file.name,
                 content: fs.readFileSync(path.join(process.cwd(), "public/upload/", file.name))
+               },
+               {
+                filename:"fullCoding.png",
+                path:path.join(process.cwd(),'public',"fullCoding.png"),
+                cid:"logo"
                }
             ]
         }
