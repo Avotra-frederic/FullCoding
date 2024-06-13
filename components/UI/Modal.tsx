@@ -37,14 +37,14 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, service }) => {
         formData.append('file', file);
       }
 
-      const response = await emailjs.sendForm(
-        'FullCoding', 'fullCoding_Template',
-        formRef.current!,
-        'GJCbIwr-B8qpFObBe'
-      );
+      const response = await fetch('/api/mail', {
+        method: 'POST',
+        body: formData,
+      });
 
       if (response.status === 200) {
-        toast.success("Demande envoyé avec succès!");
+        const {message}= await response.json();
+        toast.success(message);
         onClose();
         handleReset()
       } else {
