@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs"
-import mailgun from "mailgun-js"
 import { writeFile } from "fs/promises";
 import path from "path";
+import { createTransport } from "nodemailer";
 export async function POST(request:NextRequest) {
     const data = await request.formData();
     const file = data.get("file") as File;
@@ -10,7 +10,6 @@ export async function POST(request:NextRequest) {
     const email = data.get("email") as string;
     const message = data.get("message") as string;
     const service = data.get("service") as string;
-    const mg = mailgun({ apiKey: process.env.MAILGUN_API_KEY as string, domain: process.env.MAILGUN_DOMAIN as string });
     try {
         const bytes =  await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
@@ -18,18 +17,33 @@ export async function POST(request:NextRequest) {
         const emailTemplatePath = path.join(process.cwd(),"utils","emailTemplate.html");
         const emailTemplate = fs.readFileSync(emailTemplatePath,"utf-8");
         const replacedEmailTemplate = emailTemplate.replace("[recipientName]","Equipe Fullcoding").replace("[message]",message)
-        const data = {
-            from: `FullCoding <no-reply@${process.env.MAILGUN_DOMAIN}>`,
-            to: email,
-            subject: `Demande de devis pour ${service}`,
-            html: replacedEmailTemplate,
-            attachment: [
-              new mg.Attachment({ data: path.join(process.cwd(), 'public', 'images', 'logo.png'), filename: 'logo.png' }),
-              new mg.Attachment({ data: path.join(process.cwd(), 'public', 'upload', file.name), filename: file.name })
-            ]
-          };
+        const transporter = createTransport({
+          service: 'hotmail',
+          auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+          },
+        });
+      
+        const mailOptions = {
+          from: `FullCoding <${process.env.EMAIL_USER}>`,
+          to: email,
+          subject: service,
+          html: replacedEmailTemplate,
+          attachments: [
+            {
+              filename: 'logo.png',
+              path: path.join(process.cwd(), 'public', 'fullCoding.png'),
+              cid: 'logo',
+            },
+            {
+              filename: 'document.pdf',
+              path: path.join(process.cwd(), 'public', 'upload', file.name),
+            },
+          ],
+        };
 
-          await mg.messages().send(data);
+        await transporter.sendMail(mailOptions);
         return NextResponse.json({message:"Demande envoyer avec succes"},{status:200});
     }catch(error){
         console.log(error)
