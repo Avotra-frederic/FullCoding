@@ -27,17 +27,18 @@ export async function POST(request:NextRequest) {
       
         const mailOptions = {
           from: `FullCoding <${process.env.EMAIL_USER}>`,
-          to: email,
+          to: process.env.EMAIL_USER,
           subject: service,
           html: replacedEmailTemplate,
+          replyTo:email,
           attachments: [
             {
-              filename: 'logo.png',
+              filename: 'fullCoding.png',
               path: path.join(process.cwd(), 'public', 'fullCoding.png'),
               cid: 'logo',
             },
             {
-              filename: 'document.pdf',
+              filename: file.name,
               path: path.join(process.cwd(), 'public', 'upload', file.name),
             },
           ],
