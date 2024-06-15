@@ -26,6 +26,7 @@ function Navbar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -38,6 +39,7 @@ function Navbar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScroll(window.scrollY > 70);
@@ -53,6 +55,7 @@ function Navbar() {
   } `;
 
   const menuClasses = `md:flex transition-all duration-300 gap-5 hidden`;
+
 
   return (
     <header

@@ -210,6 +210,7 @@ export default function Home() {
           showIndicators={true}
           swipeable
           infiniteLoop
+          showThumbs={false}
         >
           <div className="relative h-full text-white">
             <div className="h-[30rem] grid grid-cols-1 md:grid-cols-5">
