@@ -1,6 +1,5 @@
 "use client";
 import { useState, FC, FormEvent, useRef } from "react";
-import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 
 interface ModalProps {
@@ -26,7 +25,6 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, service }) => {
   };
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-
     try {
       setSend(true);
       const formData = new FormData();
