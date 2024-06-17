@@ -26,7 +26,14 @@ import Service from "@/components/UI/Service";
 
 export default function Home() {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      disableMutationObserver:true,
+      mirror:false,
+    });
+
+    return ()=>{
+      AOS.refresh()
+    }
   }, []);
   useEffect(() => {
     const disableRightClick = (e: { preventDefault: () => void }) => {

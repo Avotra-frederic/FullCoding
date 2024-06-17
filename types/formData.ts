@@ -5,3 +5,9 @@ interface formData
     email: string,
     message:string
 }
+
+interface validatedForm
+{
+    userName: boolean | null | undefined,
+    email: boolean | null | undefined,
+}

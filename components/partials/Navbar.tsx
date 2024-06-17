@@ -71,6 +71,7 @@ function Navbar() {
           <NavLink href="#about">A propos</NavLink>
           <NavLink href="#services">Services</NavLink>
           <NavLink href="#pricing">Devis</NavLink>
+          <NavLink href="#contact">Contact</NavLink>
         </div>
 
         <div className="md:hidden">
@@ -84,6 +85,7 @@ function Navbar() {
         <NavLink href="#about">A propos</NavLink>
         <NavLink href="#services">Services</NavLink>
         <NavLink href="#pricing">Devis</NavLink>
+        <NavLink href="#contact">Contact</NavLink>
       </div>
     </header>
   );
