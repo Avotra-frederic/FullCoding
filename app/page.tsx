@@ -231,7 +231,7 @@ export default function Home() {
                 </h1>
                 <p className="text-sm md:text-base text-center">
                   Sagot & Ralay est un site web de présentation pour un service
-                  d&pos;avocat, offrant des informations complètes sur les services
+                  d&apos;avocat, offrant des informations complètes sur les services
                   juridiques proposés, les spécialisations et les coordonnées
                   pour la consultation.
                 </p>
