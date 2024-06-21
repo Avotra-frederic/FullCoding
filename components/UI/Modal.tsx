@@ -113,11 +113,12 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, service }) => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Fichier</label>
+            <label className="block text-gray-700">Votre cahier de charge</label>
             <input
               type="file"
               name="file"
               className="w-full p-2 border border-gray-300 rounded mt-1"
+              required
               onChange={(e) =>
                 setFile(e.target.files ? e.target.files[0] : null)
               }
