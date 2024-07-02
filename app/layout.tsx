@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     google:"hGtGPAa9FFWiNqxAC05Kcs3kHUpYuKu1HUcDw0VnjXE",
   },
   robots:{
-    index: false,
+    index: true,
     follow: false
   }
 };
