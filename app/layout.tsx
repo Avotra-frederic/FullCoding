@@ -13,10 +13,6 @@ export const metadata: Metadata = {
   keywords: "FullCoding, services numériques, Madagascar, développement web, solutions digitales",
   verification:{
     google:"hGtGPAa9FFWiNqxAC05Kcs3kHUpYuKu1HUcDw0VnjXE",
-  },
-  robots:{
-    index: true,
-    follow: false
   }
 };
 export default function RootLayout({
