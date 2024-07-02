@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://espic.jssi-madagascar.mg/',
       lastModified: new Date(),
       changeFrequency: 'yearly',
-      priority: 2,
+      priority: 3,
     },
   ]
 }
