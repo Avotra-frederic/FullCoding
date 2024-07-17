@@ -82,7 +82,7 @@ export default function Home() {
         <Image
           src={hero}
           alt="hero"
-          className="w-[400px] h-[400px] absolute inset-y-1/4  right-28 hidden md:block"
+          className="absolute w-[400px] inset-y-72 lg:inset-y-1/4  right-5 lg:right-32 hidden md:block"
           loading="eager"
           decoding="async"
           fill={false}
@@ -227,10 +227,10 @@ export default function Home() {
                 href={""}
               >
                 <h1 className="text-5xl font-semibold text-center">
-                  Sagot & Ralay
+                  RAlAY Nellie Laï
                 </h1>
                 <p className="text-sm md:text-base text-center">
-                  Sagot & Ralay est un site web de présentation pour un service
+                RAlAY Nellie Laï est un site web de présentation pour un service
                   d&apos;avocat, offrant des informations complètes sur les services
                   juridiques proposés, les spécialisations et les coordonnées
                   pour la consultation.
