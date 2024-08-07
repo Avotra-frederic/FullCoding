@@ -27,14 +27,15 @@ import Service from "@/components/UI/Service";
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      disableMutationObserver:true,
-      mirror:false,
+      disableMutationObserver: true,
+      mirror: false,
     });
 
-    return ()=>{
-      AOS.refresh()
-    }
+    return () => {
+      AOS.refresh();
+    };
   }, []);
+
   useEffect(() => {
     const disableRightClick = (e: { preventDefault: () => void }) => {
       e.preventDefault();
@@ -45,35 +46,29 @@ export default function Home() {
       document.removeEventListener("contextmenu", disableRightClick);
     };
   }, []);
+
   return (
     <>
       <section className="relative h-screen bg-[url('/mobile.png')] bg-cover bg-center bg-no-repeat bg-fixed">
-        <div className="h-full bg-gradient-to-r from-slate-900 to-purple-800/70 ">
+        <div className="h-full bg-gradient-to-r from-slate-900 to-purple-800/70">
           <div className="container h-full mx-auto grid grid-cols-1 md:grid-cols-2 px-5">
             <div className="h-full flex flex-col justify-center text-white gap-3">
-              <h1 className="text-4xl sm:text-5xl leading-tight">
+              <h1 className="text-xl sm:text-4xl md:text-4xl lg:text-6xl leading-tight">
                 Bienvenue chez <br />
                 <span className="font-bold">Full Coding</span>
               </h1>
-              <p className="text-base ">
+              <p className="text-base md:text-base md:text-justify">
                 Bienvenue sur le site de Full Coding, votre partenaire de
                 confiance pour toutes vos solutions numériques. Nous sommes une
                 équipe dévouée de développeurs et de créatifs, prêts à vous
                 accompagner dans la réussite de vos projets en ligne.
               </p>
-
-              <div className=" flex gap-3">
+              <div className="flex gap-3">
                 <a
                   href="#pricing"
-                  className="h-fit w-fit border backdrop-blur bg-[#BA1C98] border-[#BA1C98] px-5 py-2 text-sm sm:text-[14px] sm:px-7 sm:py-3 rounded shadow-md shadow-[#BA1C98]"
+                  className="h-fit w-fit border backdrop-blur bg-[#BA1C98] border-[#BA1C98] px-5 py-2 text-sm md:text-base sm:px-7 sm:py-3 rounded shadow-md shadow-[#BA1C98]"
                 >
                   Demandez un devis
-                </a>
-                <a
-                  href="#we"
-                  className="h-fit w-fit bg-gradient-to-r from-slate-400 to-slate-400 btn-hover-1 bg-right  bg-no-repeat duration-500  text-slate-400 hover:text-slate-900 px-5 py-2 text-sm sm:text-[16px] sm:px-7 sm:py-3 rounded"
-                >
-                  En savoir plus
                 </a>
               </div>
             </div>
@@ -82,19 +77,20 @@ export default function Home() {
         <Image
           src={hero}
           alt="hero"
-          className="absolute w-[400px] inset-y-72 lg:inset-y-1/4  right-5 lg:right-32 hidden md:block"
+          className="absolute hidden md:block w-[200px] sm:w-[300px] md:w-[390px] inset-x-1/2 transform translate-x-1 lg:translate-x-1/3 bottom-10 md:bottom-1/4 lg:bottom-1/4"
           loading="eager"
           decoding="async"
           fill={false}
         />
-        <div className="absolute bottom-0 left-0 overflow-hidden bg-[url('/wave.png')]  h-[142px] animateWave w-full after:w-full after:h-[142px] after:bg-[url('/wave.png')] after:absolute after:top-0 after:left-0 after:opacity-60  before:w-full before:h-[142px] before:bg-[url('/wave.png')] before:absolute before:top-0 before:left-0 before:opacity-40"></div>
+        <div className="absolute bottom-0 left-0 overflow-hidden bg-[url('/wave.png')] h-[143px] animateWave w-full after:w-full after:h-[142px] after:bg-[url('/wave.png')] after:absolute after:top-0 after:left-0 after:opacity-60 before:w-full before:h-[142px] before:bg-[url('/wave.png')] before:absolute before:top-0 before:left-0 before:opacity-40"></div>
       </section>
+
       <section id="about">
         <div>
           <div className="container mx-auto p-5">
-            <div className="grid grid-cols-1 sm:grid-cols-6">
-              <div className="col-span-1"></div>
-              <div className="col-span-4 flex flex-col justify-center items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-6">
+              <div className="lg:col-span-1"></div>
+              <div className="lg:col-span-4 flex flex-col justify-center items-center">
                 <h1
                   className="text-3xl sm:text-4xl"
                   data-aos="fade-up"
@@ -114,22 +110,24 @@ export default function Home() {
                   et aider les entreprises à atteindre leurs objectifs.
                 </p>
               </div>
-              <div className="col-span-1"></div>
+              <div className="lg:col-span-1"></div>
             </div>
           </div>
         </div>
       </section>
-      <Service/>
+
+      <Service />
+
       <section id="we">
         <div className="container mx-auto p-5">
           <h1
-            className="text-3xl sm:text-4xl text-center mb-10"
+            className="text-3xl sm:text-4xl md:text-5xl text-center mb-10"
             data-aos="fade-up"
             data-aos-duration={1000}
           >
             Pourquoi nous choisir ?
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
             <div
               className="p-5 flex flex-col items-center justify-center"
               data-aos="fade-up"
@@ -141,7 +139,7 @@ export default function Home() {
               <h1 className="text-xl sm:text-2xl uppercase text-center">
                 Expertise
               </h1>
-              <p className="text-base  text-center">
+              <p className="text-base text-center">
                 Une équipe de professionnels expérimentés avec une expertise
                 reconnue dans le développement web et mobile.
               </p>
@@ -158,7 +156,7 @@ export default function Home() {
               <h1 className="text-xl sm:text-2xl uppercase text-center">
                 Innovation
               </h1>
-              <p className="text-base  text-center">
+              <p className="text-base text-center">
                 Utilisation des technologies les plus récentes pour offrir des
                 solutions innovantes et performantes.
               </p>
@@ -175,7 +173,7 @@ export default function Home() {
               <h1 className="text-xl sm:text-2xl uppercase text-center">
                 Personnalisation
               </h1>
-              <p className="text-base  text-center">
+              <p className="text-base text-center">
                 Des solutions sur mesure adaptées aux besoins spécifiques de
                 chaque client.
               </p>
@@ -230,10 +228,10 @@ export default function Home() {
                   RAlAY Nellie Laï
                 </h1>
                 <p className="text-sm md:text-base text-center">
-                RAlAY Nellie Laï est un site web de présentation pour un service
-                  d&apos;avocat, offrant des informations complètes sur les services
-                  juridiques proposés, les spécialisations et les coordonnées
-                  pour la consultation.
+                  RAlAY Nellie Laï est un site web de présentation pour un
+                  service d&apos;avocat, offrant des informations complètes sur
+                  les services juridiques proposés, les spécialisations et les
+                  coordonnées pour la consultation.
                 </p>
               </Link>
               <div className="col-span-1"></div>
@@ -251,10 +249,10 @@ export default function Home() {
                   ESPIC MADAGASCAR
                 </h1>
                 <p className="text-sm md:text-base text-center">
-                  ESPIC Madagascar est le site officiel de l&apos;université ESPIC,
-                  offrant une plateforme de cours en ligne avec des informations
-                  sur les programmes académiques, les admissions, et les
-                  ressources éducatives disponibles.
+                  ESPIC Madagascar est le site officiel de l&apos;université
+                  ESPIC, offrant une plateforme de cours en ligne avec des
+                  informations sur les programmes académiques, les admissions,
+                  et les ressources éducatives disponibles.
                 </p>
               </Link>
               <div className="col-span-1"></div>
@@ -304,7 +302,8 @@ export default function Home() {
           </div>
         </Carousel>
       </section>
-      <PricingSection/>
+
+      <PricingSection />
       <Contact />
     </>
   );

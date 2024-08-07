@@ -12,7 +12,7 @@ function NavLink({ href, children }: NavLinkProps) {
   return (
     <a
       href={href}
-      className="relative block md:inline-block px-4 py-2  text-white transition duration-300 ease-in-out hover-1"
+      className="relative block md:inline-block md:text-sm px-4 py-2  text-white transition duration-300 ease-in-out hover-1"
     >
       <div className="relative z-10">{children}</div>
       <div className="absolute inset-0  hover:bg-transparent transition duration-300 ease-in-out"></div>

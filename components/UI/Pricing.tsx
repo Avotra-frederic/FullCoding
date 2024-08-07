@@ -24,17 +24,18 @@ const PricingSection: FC = () => {
         >
           Nos devis
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          {/* Développement Web */}
           <div
-            className="h-auto relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700"
+            className="relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 bg-white after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700"
             data-aos="fade-up"
             data-aos-duration={1000}
           >
-            <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-[#CCCCCC]/40 flex items-center justify-center">
+            <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-gray-200 flex items-center justify-center">
               <BiNetworkChart size={50} />
             </div>
             <span>Développement Web</span>
-            <span className="text-[8px]">A partir de</span> 
+            <span className="text-[8px]">À partir de</span> 
             <h1 className="font-bold text-4xl text-center">400 000 MGA</h1>
             <ul className="mt-3 pl-5">
               <li className="flex items-center gap-3">
@@ -69,17 +70,18 @@ const PricingSection: FC = () => {
               Commencer
             </button>
           </div>
+          {/* Développement Mobile */}
           <div
-            className="h-auto relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700"
+            className="relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 bg-white after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700"
             data-aos="fade-up"
             data-aos-duration={1000}
             data-aos-delay={500}
           >
-            <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-[#CCCCCC]/40 flex items-center justify-center">
+            <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-gray-200 flex items-center justify-center">
               <BiLogoAndroid size={50} />
             </div>
             <span>Développement Mobile</span>
-            <span className="text-[8px]">A partir de</span> 
+            <span className="text-[8px]">À partir de</span> 
             <h1 className="font-bold text-4xl text-center">600 000 MGA</h1>
             <ul className="mt-3 pl-5">
               <li className="flex items-center gap-3">
@@ -97,7 +99,7 @@ const PricingSection: FC = () => {
               <li className="flex items-center gap-3">
                 <LiaCheckCircleSolid size={20} />
                 <span className="text-base">
-                  Intégration d&apos;API et de services tiers
+                  Intégration d'API et de services tiers
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -114,17 +116,18 @@ const PricingSection: FC = () => {
               Commencer
             </button>
           </div>
+          {/* Développement Logiciel */}
           <div
-            className="h-auto relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700"
+            className="relative rounded-2xl shadow-2xl overflow-hidden p-10 flex flex-col items-center gap-3 bg-white after:rounded before:rounded-2xl after:absolute after:w-full after:h-full after:-z-50 after:top-1 after:bg-white before:absolute before:top-0 before:-z-50 before:w-full before:h-full before:bg-gradient-to-r before:from-pink-500 before:to-purple-700"
             data-aos="fade-up"
             data-aos-duration={1000}
             data-aos-delay={1000}
           >
-            <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-[#CCCCCC]/40 flex items-center justify-center">
+            <div className="h-20 w-20 rounded-full mx-auto mb-3 bg-gray-200 flex items-center justify-center">
               <BiDesktop size={50} />
             </div>
             <span>Développement Logiciel</span>
-            <span className="text-[8px]">A partir de</span> 
+            <span className="text-[8px]">À partir de</span> 
             <h1 className="font-bold text-4xl text-center">600 000 MGA</h1>
             <ul className="mt-3 pl-5">
               <li className="flex items-center gap-3">
