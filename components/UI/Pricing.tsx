@@ -99,7 +99,7 @@ const PricingSection: FC = () => {
               <li className="flex items-center gap-3">
                 <LiaCheckCircleSolid size={20} />
                 <span className="text-base">
-                  Intégration d'API et de services tiers
+                  Intégration d&apos;API et de services tiers
                 </span>
               </li>
               <li className="flex items-center gap-3">
