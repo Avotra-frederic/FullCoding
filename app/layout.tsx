@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {GoogleAnalytics} from "@next/third-parties/google"
+import {GoogleAnalytics, GoogleTagManager} from "@next/third-parties/google"
 import "./globals.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import 'react-toastify/dist/ReactToastify.css';
@@ -33,6 +33,7 @@ export default function RootLayout({
           <ToastContainer />
       </body>
       <GoogleAnalytics gaId={"G-32204LQ8NS"}/>
+      <GoogleTagManager gtmId={"GTM-M4QVP543"}/>
     </html>
   );
 }
