@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.5",
     "@types/dompurify": "^3.0.5",
     "@types/mailgun-js": "^0.22.18",
     "@types/nodemailer": "^6.4.15",
