@@ -2003,6 +2003,13 @@ internal-slot@^1.0.7:
     hasown "^2.0.0"
     side-channel "^1.0.4"
 
+ip-geolocation-api-sdk-typescript@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/ip-geolocation-api-sdk-typescript/-/ip-geolocation-api-sdk-typescript-1.0.7.tgz#d48bd2c56b4c10d28c764169c89b8ff1e7bd4144"
+  integrity sha512-3111tnFySz0Sc2HLlpt4k1heHLVgpkyHQAej9aHlZngWOUk0Y8HRXV2/c+M6RgG6tayOdzxOzKM1IevJ5SIaag==
+  dependencies:
+    xmlhttprequest "^1.8.0"
+
 ip@1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
@@ -3796,6 +3803,11 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
+
+xmlhttprequest@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz#67fe075c5c24fef39f9d65f5f7b7fe75171968fc"
+  integrity sha512-58Im/U0mlVBLM38NdZjHyhuMtCqa61469k2YP/AaPbvCoV9aQGUpbJBj1QRm2ytRiVQBD/fsw7L2bJGDVQswBA==
 
 xregexp@2.0.0:
   version "2.0.0"

@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 export const metadata: Metadata = {
   title: "FullCoding",
   description: "FullCoding offre des services numériques de qualité à Madagascar, spécialisés en développement web, mobile, et solutions digitales.",
-  keywords: "FullCoding, services numériques, Madagascar, développement web, solutions digitales",
+  keywords: "FullCoding, services numériques, Madagascar, développement web, solutions digitales, développement mobile, infrastructure IT",
   verification:{
     google:"hGtGPAa9FFWiNqxAC05Kcs3kHUpYuKu1HUcDw0VnjXE",
   }
