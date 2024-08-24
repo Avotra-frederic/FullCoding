@@ -222,7 +222,7 @@ export default function Home() {
               <div className="col-span-1"></div>
               <Link
                 className="col-span-3 h-full flex flex-col items-center justify-center gap-3 px-3"
-                href={""}
+                href={"https://www.ralaynellielaiavocatalacour.mg/"}
               >
                 <h1 className="text-5xl font-semibold text-center">
                   RAlAY Nellie Laï
