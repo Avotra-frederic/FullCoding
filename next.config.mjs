@@ -10,7 +10,7 @@ const nextConfig = {
         ],
       },
       async headers(){
-        rerturn [
+        return [
           {
             source:'/(.*)',
             headers:[
